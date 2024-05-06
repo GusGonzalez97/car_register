@@ -1,0 +1,10 @@
+.env
+.idea
+.next
+node_modules
+.vscode
+.gitlab-ci.yml
+package.json
+.prettierrc.json
+.eslintrc.json
+public/*

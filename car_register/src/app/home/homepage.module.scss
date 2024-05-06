@@ -1,0 +1,31 @@
+@import 'styles/base/mixins.scss';
+@import 'styles/base/colors.scss';
+.container{
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap:2rem;
+
+    .header{
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .itemButton{
+        padding: 1rem;
+        border: none;
+        width: 150px;
+        background-color: transparent;
+        border-radius: 10px;
+        border: 1px solid $primary;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}

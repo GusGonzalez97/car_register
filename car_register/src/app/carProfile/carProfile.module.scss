@@ -1,0 +1,41 @@
+@import '../../../styles/base/mixins.scss';
+@import '../../../styles/base/colors.scss';
+.container{
+    padding: 1rem;
+    
+        .car_profile_subtitle{
+            text-align: left;
+        }
+
+    .imgContainer{
+        width: 95%;
+        margin: 0 auto;
+
+        .img{
+            width: 100%;
+            height: auto;
+            border-radius: .1rem;
+        }
+    }
+
+    .btnSection{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+    }
+
+
+}
+.iconContainer{
+    padding: 1rem;
+    background-color: $primary;
+    border-radius: 50%;
+    @include center;
+}
+
+.textBtn{
+    color:white;
+    font-weight: bold;
+    margin-top: 0;
+}

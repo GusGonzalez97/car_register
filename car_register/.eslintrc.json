@@ -1,3 +1,49 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": ["next", "prettier"],
+	"plugins": ["simple-import-sort", "unused-imports", "typescript-sort-keys"],
+	"parser": "@typescript-eslint/parser",
+	"rules": {
+		"react-hooks/exhaustive-deps": "off",
+		"prefer-const": "error",
+		"quotes": ["error", "single"],
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
+		"unused-imports/no-unused-imports": "error",
+		"typescript-sort-keys/interface": "error",
+		"typescript-sort-keys/string-enum": "error",
+		"react/sort-prop-types": [
+			"error",
+			{
+				"callbacksLast": true,
+				"ignoreCase": true,
+				"requiredFirst": true,
+				"sortShapeProp": true,
+				"noSortAlphabetically": true
+			}
+		],
+		"no-console": ["warn", { "allow": ["warn", "error"] }],
+		"react/jsx-sort-props": [
+			"error",
+			{
+				"callbacksLast": true,
+				"shorthandFirst": true,
+				"shorthandLast": true,
+				"ignoreCase": true,
+				"noSortAlphabetically": false,
+				"reservedFirst": true,
+				"locale": "auto"
+			}
+		],
+		"default-case": ["error", { "commentPattern": "^no default$" }],
+		"no-await-in-loop": "error",
+		"no-debugger": "error",
+		"no-dupe-keys": "error",
+		"no-duplicate-case": "error",
+		"no-inner-declarations": "error",
+		"dot-notation": "warn",
+		"eqeqeq": "error", 
+		"no-empty": "error",
+		"no-empty-function": "error",
+		"no-var": "error"
+		}
 }
