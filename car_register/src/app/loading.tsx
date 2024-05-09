@@ -1,6 +1,6 @@
-import FullScreenLoader from '@/elements/fullScreenLoader/FullScreenLoader'
-const Loading = ()=>{
-    return <FullScreenLoader/>
-}
+import FullScreenLoader from '@/components/elements/fullScreenLoader/FullScreenLoader';
+const Loading = () => {
+  return <FullScreenLoader />;
+};
 
-export default Loading
+export default Loading;

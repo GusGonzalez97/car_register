@@ -1,14 +1,14 @@
 'use client';
 
-import { Box, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
+import { Avatar } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
-import { AiOutlineCar, AiOutlineSafety } from 'react-icons/ai';
-import { LiaToolsSolid } from 'react-icons/lia';
-import { PiMoneyWavy } from 'react-icons/pi';
 
-import IconComponent from '@/elements/icons/Icon';
+import { primaryColor } from '@/utils/constants';
 import { RouteEnum } from '@/utils/route.mapper';
 
+import PlaceCard from '../../components/elements/placeCard/placeCard';
 import styles from './homepage.module.scss';
 
 const Home = () => {
@@ -18,47 +18,38 @@ const Home = () => {
     console.log(route);
     router.push(route.toString());
   };
-
+  //TODO: A partir de la 4ta letra, hace la busqueda y redirecciona al listado de destino
+  //TODO: LLevar el header a un componente para hacer parallel routing.
   return (
     <div className={styles.container}>
       <Box className={styles.header}>
-        <h2 className='title'>Ford Ecosport</h2>
-        <p className='text-md'>
-          Modelo <strong>MyPlus XLT</strong>
-        </p>
-        <p className='text-md'>
-          Motor <strong>2.0 Duratec</strong>
-        </p>
-        <p className='text-md'>
-          Patente <strong>KIH 975 </strong>
-        </p>
-        <p className='text-md'>70.000 KM</p>
+        <Flex justifyContent={'space-between'}>
+          <h2 className='title'>Hola Gustavo!</h2>
+          <Avatar
+            backgroundColor={primaryColor}
+            color={'white'}
+            name='Gustavo Gonzalez'
+            src='https://bit.ly/sage-adebayo'
+          />
+        </Flex>
+        <label>¿Cual será tu próximo viaje?</label>
+        <Input placeholder='Buscar destino' />
       </Box>
 
-      <Grid gap={4} templateColumns='repeat(2, 1fr)' templateRows='repeat(2, 1fr)'>
-        <GridItem colSpan={1}>
-          <button className={styles.itemButton} onClick={() => onNavigate(RouteEnum.MECHANIC)}>
-            <IconComponent color='#c50425' icon={LiaToolsSolid} size='34' />
-            <label className='text-label'>Mantenimiento</label>
-          </button>
+      <Grid gap={2} templateColumns='repeat(1, 2fr)'>
+        <h3 className=''>Tendencias</h3>
+        <GridItem>
+          <PlaceCard />
         </GridItem>
-        <GridItem colSpan={1}>
-          <button className={styles.itemButton} onClick={() => onNavigate(RouteEnum.SECURE)}>
-            <IconComponent color='#c50425' icon={AiOutlineSafety} size='34' />
-            <label className='text-label'>Seguro</label>
-          </button>
+      </Grid>
+
+      <Grid gap={2} templateColumns='repeat(1, 2fr)'>
+        <h3 className=''>Para tí</h3>
+        <GridItem>
+          <PlaceCard />
         </GridItem>
         <GridItem>
-          <button className={styles.itemButton} onClick={() => onNavigate(RouteEnum.CAR_PROFILE)}>
-            <IconComponent color='#c50425' icon={AiOutlineCar} size='34' />
-            <label className='text-label'>Mi auto</label>
-          </button>
-        </GridItem>
-        <GridItem>
-          <button className={styles.itemButton}>
-            <IconComponent color='#c50425' icon={PiMoneyWavy} size='34' />
-            <label className='text-label'>Deudas</label>
-          </button>
+          <PlaceCard />
         </GridItem>
       </Grid>
     </div>

@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import BottomTabNavigator from '@/share/bottomTabNavigation/bottomTabNavigation';
+import BottomTabNavigator from '../components/share/bottomTabNavigation/bottomTabNavigation';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,10 +22,10 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <ChakraProvider>
-          <main className='page-body'>{children}</main>
-          <footer>
+          <main className='page-body'>
+            {children}
             <BottomTabNavigator route='home' />
-          </footer>
+          </main>
         </ChakraProvider>
       </body>
     </html>

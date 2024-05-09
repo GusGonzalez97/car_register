@@ -1,6 +1,7 @@
 export enum RouteEnum {
-  CAR_PROFILE = '/carProfile',
+  BALANCE = '/balance',
+  CAR_PROFILE = '/myProfile',
   HOME = '/home',
-  MECHANIC = '/mechanic',
-  SECURE = '/secure'
+  MECHANIC = '/myTravel',
+  SECURE = '/places'
 }

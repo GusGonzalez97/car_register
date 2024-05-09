@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { IoCalendarOutline, IoColorPaletteOutline, IoDownloadOutline } from 'react-icons/io5';
 import { PiArrowRight, PiEngine } from 'react-icons/pi';
 
-import IconComponent from '@/elements/icons/Icon';
+import IconComponent from '@/components/elements/icons/Icon';
 
 import CarPic from '../../../public/img/Eco.png';
 import styles from './carProfile.module.scss';
